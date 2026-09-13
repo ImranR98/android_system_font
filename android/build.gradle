@@ -13,7 +13,6 @@ buildscript {
 
 plugins {
     id('com.android.library')
-    id('kotlin-android')
 }
 
 group = "dev.re7gog.android_system_font"
@@ -36,10 +35,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
-    }
-
     sourceSets {
         main.java.srcDirs += "src/main/kotlin"
         test.java.srcDirs += "src/test/kotlin"
@@ -51,5 +46,11 @@ android {
 
     dependencies {
 
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
